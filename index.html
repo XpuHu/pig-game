@@ -3,7 +3,35 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
         <title>Pig Game</title>
     </head>
-    <body></body>
+    <body>
+        <main>
+            <section class="player" id="player-1">
+                <h1 class="name" id="name-1">player 1</h1>
+                <p class="score" id="score-1"></p>
+                <div class="total">
+                    <p class="total-label">Total</p>
+                    <p class="total-score" id="total-1"></p>
+                </div>
+            </section>
+            <section class="player" id="player-2">
+                <h1 class="name" id="name-2">player 2</h1>
+                <p class="score" id="score-2"></p>
+                <div class="total">
+                    <p class="total-label">Total</p>
+                    <p class="total-score" id="total-2"></p>
+                </div>
+            </section>
+            <div class="interactive">
+                <button class="btn btn-reset">🔄 New game</button>
+                <img class="dice" />
+                <button class="btn btn-roll">🎲 Roll</button>
+                <button class="btn btn-hold">📥 Hold</button>
+            </div>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>
