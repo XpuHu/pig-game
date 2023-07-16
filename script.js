@@ -1,23 +1,3 @@
-// 3 btns - roll, hold, reset
-
-// roll
-// generate random number - 1-6 +
-// display dice +
-// if 1 - reset score & switch player +
-// else - add number to score +
-// display score +
-
-// hold
-// add number to score +
-// if >=100 - WIN
-// else - switch player +
-
-// reset +
-// scores to 0 +
-// player 1 active +
-// player 2 deactivate +
-// clear dice
-
 const player_1 = document.getElementById('player-1');
 const player_2 = document.getElementById('player-2');
 let score_1 = document.getElementById('score-1');
@@ -29,12 +9,6 @@ const btn_roll = document.querySelector('.btn-roll');
 const btn_hold = document.querySelector('.btn-hold');
 const dice = document.querySelector('.dice');
 let currentPlayer;
-
-// console.log(player_1.children);
-// console.log('score-1' in player_1.children);
-// console.log(player_1.children['score-1']);
-// console.log(player_1.id.split('-')[1]);
-// console.log(player_1.children[`score-${1}`]);
 
 initGame();
 
@@ -52,7 +26,6 @@ function initGame() {
 }
 
 function resetGame() {
-    console.log('reset');
     initGame();
     player_2.classList.remove('player-active');
     player_1.classList.remove('player-winner');
@@ -61,7 +34,6 @@ function resetGame() {
 }
 
 function roll() {
-    console.log('roll');
     const randomNumber = Math.trunc(Math.random() * 6 + 1);
     displayDice(randomNumber);
     if (randomNumber === 1) {
@@ -73,13 +45,11 @@ function roll() {
 }
 
 function hold() {
-    console.log('hold');
     const score = Number(getPlayerScore(currentPlayer).textContent);
     setPlayerTotal(currentPlayer, score);
     const currentPlayerTotal = Number(
         getPlayerTotal(currentPlayer).textContent
     );
-    console.log(currentPlayerTotal);
     if (currentPlayerTotal >= 100) {
         endGame();
     } else {
